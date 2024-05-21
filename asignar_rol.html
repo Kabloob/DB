@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asignar Rol a Usuario</title>
+</head>
+<body>
+    <a href="/">Regresar</a>
+    <h2>Asignar Rol a Usuario</h2>
+    <form action="{{ url_for('asignar_rol') }}" method="post">
+        <label for="username">Nombre de Usuario:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="rol">Rol:</label><br>
+        <input type="text" id="rol" name="rol"><br><br>
+        <input type="submit" value="Asignar Rol">
+    </form>
+</body>
+</html>

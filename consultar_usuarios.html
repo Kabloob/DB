@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Usuarios</title>
+</head>
+<body>
+    <a href="{{ url_for('index') }}">Regresar</a>
+    <h2>Usuarios Creados</h2>
+    <ul>
+        {% if users %}
+            {% for user in users %}
+                <li>{{ user }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No hay usuarios disponibles o ocurrió un error.</li>
+        {% endif %}
+    </ul>
+</body>
+</html>

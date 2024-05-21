@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Respaldar Base de Datos</title>
+</head>
+<body>
+    <a href="{{ url_for('index') }}">Regresar</a>
+    <h2>Respaldar Base de Datos</h2>
+    <form action="{{ url_for('respaldar_db') }}" method="post">
+        <label for="dbname">Seleccione la Base de Datos:</label><br>
+        <select id="dbname" name="dbname" required>
+            {% for database in databases %}
+                <option value="{{ database }}">{{ database }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="backup_folder">Seleccionar Carpeta de Respaldo:</label><br>
+        <input type="text" id="backup_folder" name="backup_folder" required readonly>
+        <button type="button" onclick="selectBackupFolder()">Seleccionar Carpeta</button><br><br>
+        <input type="submit" value="Respaldar">
+    </form>
+    
+    <script>
+    function selectBackupFolder() {
+        const folderInput = document.getElementById('backup_folder');
+        const folderPath = window.prompt('Por favor, ingrese la ruta de la carpeta de respaldo:');
+        folderInput.value = folderPath;
+    }
+    </script>
+</body>
+</html>

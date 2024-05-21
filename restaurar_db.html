@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurar Base de Datos</title>
+</head>
+<body>
+    <a href="{{ url_for('index') }}">Regresar</a>
+    <h2>Restaurar Base de Datos</h2>
+    <form action="{{ url_for('restaurar_db') }}" method="post" enctype="multipart/form-data">
+        <label for="dbname">Nombre de la Base de Datos:</label><br>
+        <input type="text" id="dbname" name="dbname" required><br><br>
+        <label for="backup_file">Seleccionar Archivo de Respaldo:</label><br>
+        <input type="file" id="backup_file" name="backup_file" required><br><br>
+        <input type="submit" value="Restaurar">
+    </form>
+</body>
+</html>

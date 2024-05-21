@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Principal</title>
+</head>
+<body>
+    <h1>Menú Principal</h1>
+    <ul>
+        <li><a href="{{ url_for('crear_usuario') }}">Crear Usuario</a></li>
+        <li><a href="{{ url_for('modificar_usuario') }}">Modificar Usuario</a></li>
+        <li><a href="{{ url_for('eliminar_usuario') }}">Eliminar Usuario</a></li>
+        <li><a href="{{ url_for('crear_rol') }}">Crear Rol</a></li>
+        <li><a href="{{ url_for('asignar_rol') }}">Asignar Rol a Usuario</a></li>
+        <li><a href="{{ url_for('consultar_usuarios') }}">Consultar Nuevos Usuarios Creados</a></li>
+        <li><a href="{{ url_for('consultar_roles') }}">Consultar Roles Creados</a></li>
+        <li><a href="{{ url_for('respaldar_db') }}">Respaldar Base de Datos</a></li>
+        <li><a href="{{ url_for('restaurar_db') }}">Restaurar Base de Datos</a></li>
+    </ul>
+</body>
+</html>
