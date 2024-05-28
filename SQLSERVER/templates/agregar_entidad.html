@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Entidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: block;
+            text-align: center;
+            color: #007bff;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agregar Entidad con Atributos</h1>
+        <form method="post" action="{{ url_for('agregar_entidad') }}">
+            <label for="entity_name">Nombre de la Entidad:</label>
+            <input type="text" id="entity_name" name="entity_name" required><br><br>
+            
+            <label for="attributes">Atributos (nombre tipo, separado por comas):</label>
+            <input type="text" id="attributes" name="attributes" placeholder="ej: nombre VARCHAR(50), edad INT" required><br><br>
+            
+            <input type="submit" value="Agregar Entidad">
+        </form>
+        <a href="{{ url_for('index') }}">Regresar</a>
+    </div>
+</body>
+</html>

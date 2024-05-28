@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Página Principal</h1>
+        <ul>
+            <li><a href="{{ url_for('crear_usuario') }}">Crear Usuario</a></li>
+            <li><a href="{{ url_for('modificar_usuario') }}">Modificar Usuario</a></li>
+            <li><a href="{{ url_for('eliminar_usuario') }}">Eliminar Usuario</a></li>
+            <li><a href="{{ url_for('consultar_usuarios') }}">Consultar Usuarios</a></li>
+            <li><a href="{{ url_for('crear_rol') }}">Crear Rol</a></li>
+            <li><a href="{{ url_for('consultar_roles') }}">Consultar Roles</a></li>
+            <li><a href="{{ url_for('asignar_rol') }}">Asignar Rol</a></li>
+            <li><a href="{{ url_for('listar_entidades_route') }}">Listar Entidades</a></li>
+            <li><a href="{{ url_for('agregar_entidad') }}">Agregar Entidades con Atributos</a></li>
+            <li><a href="{{ url_for('generar_pdf') }}">Generar PDF</a></li>
+            <li>
+                <form action="/generar_procedimientos" method="POST">
+                    <button type="submit">Generar Procedimientos Almacenados</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
